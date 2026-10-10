@@ -1,0 +1,12 @@
+
+#!/bin/bash
+echo &quot;Enter username to create:&quot;
+read user
+
+if id &quot;$user&quot; &amp;&gt;/dev/null; then
+echo &quot;User already exists&quot;
+else
+useradd $user
+echo &quot;User $user created successfully&quot; &gt;&gt; userlog.txt
+echo &quot;User created&quot;
+fi
